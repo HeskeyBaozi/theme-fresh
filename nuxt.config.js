@@ -14,11 +14,16 @@ module.exports = {
     /*
      ** Customize the progress-bar color
      */
-    loading: {color: '#3B8070'},
+    loading: {color: '#5c5c5c'},
     /*
      ** Build configuration
      */
-    css: ['tachyons/css/tachyons.min.css', '~assets/css/main.css'],
+    css: [
+        {
+            src: '~assets/style/main.less',
+            lang: 'less'
+        }
+    ],
     build: {
         vendor: ['axios', 'gsap', 'element-ui', 'lodash.throttle'],
         extend(config) {
@@ -27,6 +32,11 @@ module.exports = {
                     rule.query.loaders.ts = 'ts-loader?{"appendTsSuffixTo":["\\\\.vue$"]}'
                 }
             }
+            config.resolve.extensions.push('.ts');
+            config.module.rules.push({
+                test: /\.ts$/,
+                loader: 'ts-loader'
+            });
         }
     },
     plugins: ['~plugins/element-ui', '~plugins/fresh-ui']

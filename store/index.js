@@ -22,7 +22,7 @@ export const getters = {
 };
 
 export const actions = {
-  async nuxtServerInit({ commit }) {
+  async fetch({ commit }) {
     const response = await axios.get("/random-data.json");
     const people = response.data.slice(0, 10);
     commit("setPeople", people);

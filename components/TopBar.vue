@@ -1,11 +1,15 @@
 <template>
     <div class="fr-top-bar" :class="topBarClass">
-        <div class="left-icon">
-            <slot name="left"></slot>
+        <div class="left-icon"
+             :class="{'left-icon-rotated':currentView === 'Navigation'}"
+             @click="handleIconClick">
+            <el-button type="text">
+                <i class="el-icon-arrow-down"></i>
+            </el-button>
         </div>
-        <div class="logo">
-            <slot></slot>
-        </div>
+        <transition name="fade" mode="out-in">
+            <component :is="currentView"></component>
+        </transition>
     </div>
 </template>
 
@@ -14,15 +18,23 @@
     import Component from "nuxt-class-component";
     import {Prop} from 'vue-property-decorator';
     import ScrollBinder from '~components/mixins/ScrollBinder';
+    import Navigation from '~components/Navigation';
+    import Logo from '~components/Logo';
+    import {TopContent} from '~components/interface';
+
 
     @Component({
         name: 'fr-top-bar',
-        mixins: [ScrollBinder]
+        mixins: [ScrollBinder],
+        components: {Navigation, Logo}
 
     })
     export default class TopBar extends Vue {
         @Prop({'default': 1})
         zDepth: number;
+
+        currentView: string = 'Logo';
+
 
         get topBarClass(): string[] {
             return [
@@ -30,11 +42,22 @@
             ];
         }
 
-        onScroll(type: string, e: Event): void {
-            if (type === 'UP') {
-                console.log('显示LOGO');
+        handleIconClick(e: Event): void {
+            if (this.currentView === 'Navigation') {
+                this.currentView = 'Logo';
             } else {
-                console.log('显示菜单');
+                this.currentView = 'Navigation';
+            }
+        }
+
+        onScroll(type: string, e: Event): void {
+            switch (type) {
+                case 'UP':
+                    this.currentView = 'Navigation';
+                    break;
+                case 'DOWN':
+                    this.currentView = 'Logo';
+                    break;
             }
         }
     }
@@ -45,28 +68,41 @@
 
     .fr-top-bar {
         .filter-blur(#fff, @general-background, 40px);
+        transition: all .4s ease-in-out;
         position: fixed;
         top: 0;
         left: 0;
         display: flex;
         align-self: flex-start;
         align-items: center;
-        padding: 8px 30px;
+        padding: 0 30px;
+        height: 50px;
         width: 100%;
         z-index: 100;
+    }
 
-        & > .logo {
-            position: absolute;
-            text-align: center;
-            left: 50%;
-            width: 160px;
-            margin-left: -70px;
-        }
+    .fade-enter-active, .fade-leave-active {
+        transition: all .4s;
+    }
+
+    .fade-enter {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    .fade-leave-active {
+        opacity: 0;
+        transform: translateX(30px);
     }
 
     .left-icon {
         margin: 1px;
         padding: 0 10px;
+        transition: transform .4s;
+    }
+
+    .left-icon-rotated {
+        transform: rotate(-90deg);
     }
 
     .fr-top-bar-1 {

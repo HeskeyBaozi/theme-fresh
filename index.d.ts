@@ -17,3 +17,4 @@ declare module "~assets/*" {
 declare module "~static/*" {
 
 }
+

@@ -32,7 +32,7 @@
             return new Promise((resolve, reject) => {
                 setTimeout(() => {
                     resolve(window.pageYOffset);
-                }, 100);
+                }, 60);
             });
         }
 
@@ -50,7 +50,7 @@
 
                 });
 
-            }, 500);
+            }, 300);
             this.hasHandler = true;
             window.addEventListener('scroll', this._handleScroll);
         }
