@@ -1,6 +1,6 @@
 <template>
     <div class="logo">
-        <span>Heskey Baozi</span>
+        <span>Heskey Baozi's Blog</span>
     </div>
 </template>
 
