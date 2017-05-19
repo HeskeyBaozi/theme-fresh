@@ -1,10 +1,10 @@
 <template>
-    <el-tabs class="nav-container">
-        <el-tab-pane label="Home"></el-tab-pane>
-        <el-tab-pane label="Archives"></el-tab-pane>
-        <el-tab-pane label="Categories"></el-tab-pane>
-        <el-tab-pane label="Tags"></el-tab-pane>
-    </el-tabs>
+    <ul class="nav-container">
+        <li @click="handleClick">Home</li>
+        <li @click="handleClick">Archives</li>
+        <li>Categories</li>
+        <li>Tags</li>
+    </ul>
 </template>
 
 <script lang="ts">
@@ -15,12 +15,15 @@
         name: 'nav'
     })
     export default class extends Vue {
-
+        handleClick(tab, event) {
+            console.log(tab, event);
+        }
     }
 </script>
 
 <style lang="less">
-    @import "../theme/fresh/import.less";
+    @import "../assets/style/fresh/import.less";
+
     .nav-container {
         height: 100%;
         > .el-tabs__header {

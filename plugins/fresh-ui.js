@@ -1,6 +1,6 @@
 "use strict";
 import Vue from "vue";
-import TopBar from "~components/TopBar.vue";
+import TopBar from "~components/TopBar";
 
 const components = [
     TopBar

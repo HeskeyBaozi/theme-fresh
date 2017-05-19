@@ -19,17 +19,28 @@ module.exports = {
      ** Build configuration
      */
     css: [
+        /*
+         {
+         src: 'iview/src/styles/common/iconfont/ionicons.less',
+         lang: 'less'
+         },
+         {
+         src: 'iview/src/styles/components/index.less',
+         lang: 'less'
+         }*/
+        'iview/dist/styles/iview.css',
         {
             src: '~assets/style/main.less',
             lang: 'less'
         }
+
     ],
     build: {
-        vendor: ['axios', 'gsap', 'element-ui', 'lodash.throttle'],
+        vendor: ['axios', 'gsap', 'lodash.throttle'],
         extend(config) {
             for (rule of config.module.rules) {
                 if (rule.loader === 'vue-loader') {
-                    rule.query.loaders.ts = 'ts-loader?{"appendTsSuffixTo":["\\\\.vue$"]}'
+                    rule.query.loaders.ts = 'ts-loader?{"appendTsSuffixTo":["\\\\.vue$"]}';
                 }
             }
             config.resolve.extensions.push('.ts');
@@ -39,5 +50,5 @@ module.exports = {
             });
         }
     },
-    plugins: ['~plugins/element-ui', '~plugins/fresh-ui']
+    plugins: ['~plugins/fresh-ui', '~plugins/muse-ui', '~plugins/iview-ui']
 };

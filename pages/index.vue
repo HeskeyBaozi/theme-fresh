@@ -1,5 +1,5 @@
 <template>
-    <div id="main-container">
+    <div id="index-container" class="column-flex">
         <mu-paper class="avatar-info card" :zDepth="3" :rounded="false">
             <div class="column-flex">
                 <mu-paper class="avatar"
@@ -7,7 +7,7 @@
                           :zDepth="3"></mu-paper>
             </div>
         </mu-paper>
-        <mu-paper class="card post" :zDepth="3">
+        <mu-paper class="card post" :zDepth="3" :rounded="false">
             <h1 class="post-title">Hello</h1>
             <p class="post-meta">05-17, 2017</p>
             <p>
@@ -26,7 +26,7 @@
                 有心的小伙伴们可能会发现，最近风暴更新2.0之后，对局的匹配时间变短了，倒是可以证明最近的玩家变多了，但是这个2.0的风暴热度能持续多久呢？还得大家拭目以待。
             </p>
         </mu-paper>
-        <mu-paper class="card footer" :zDepth="3">
+        <mu-paper class="card footer" :zDepth="3" :rounded="false">
             <h1>Footer</h1>
             <p>This is a footer</p>
         </mu-paper>
@@ -35,16 +35,9 @@
 <script lang="ts">
     import Vue from "vue";
     import Component from "nuxt-class-component";
-    import Paper from 'muse-ui/src/paper';
     import {State, Getter} from "vuex-class";
-    import 'tachyons/css/tachyons.min.css';
 
-    @Component({
-        layout: 'blog',
-        components: {
-            'mu-paper': Paper
-        }
-    })
+    @Component({})
     export default class extends Vue {
         @State selected;
         @State people;
@@ -53,21 +46,7 @@
 </script>
 
 <style lang="less">
-    @import "../theme/fresh/import";
-
-    #main-container {
-        width: 800px;
-        margin: 100px auto 0 auto;
-        .column-flex;
-
-    }
-
-    .column-flex {
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-    }
-
+    @import "../assets/style/fresh/import";
     .avatar-info {
         .filter-blur(#fff, @general-background, 80px);
 
@@ -76,11 +55,6 @@
             width: 120px;
             margin: 0 auto 15px auto;
         }
-    }
-
-    .card {
-        padding: 1rem 2rem;
-        margin-bottom: 40px;
     }
 
     .post {

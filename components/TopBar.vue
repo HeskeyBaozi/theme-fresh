@@ -3,9 +3,7 @@
         <div class="left-icon"
              :class="{'left-icon-rotated':currentView === 'Navigation'}"
              @click="handleIconClick">
-            <el-button type="text">
-                <i class="el-icon-arrow-down"></i>
-            </el-button>
+            <Icon type="chevron-down"></Icon>
         </div>
         <transition name="fade" mode="out-in">
             <component :is="currentView"></component>
@@ -64,7 +62,7 @@
 </script>
 
 <style lang="less">
-    @import "../theme/fresh/import.less";
+    @import "../assets/style/fresh/import.less";
 
     .fr-top-bar {
         .filter-blur(#fff, @general-background, 40px);

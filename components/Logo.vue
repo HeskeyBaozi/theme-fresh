@@ -1,6 +1,6 @@
 <template>
     <div class="logo">
-        <span>Heskey Baozi's Blog</span>
+        <span class="dark-text">Heskey Baozi's Blog</span>
     </div>
 </template>
 
@@ -17,7 +17,7 @@
 </script>
 
 <style lang="less" scoped>
-    @import "../theme/fresh/import";
+    @import "../assets/style/fresh/import";
 
     .logo {
         text-align: center;

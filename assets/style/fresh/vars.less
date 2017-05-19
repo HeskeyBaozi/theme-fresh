@@ -1,0 +1,17 @@
+// background
+@general-background: white url('~assets/img/miku.jpg') 0 / cover fixed;
+
+// px
+@top-bar-height: 50px;
+@logo-width: 160px;
+
+// color
+@primaryColor: #313e51;
+@linear-img-color: linear-gradient(
+        135deg,
+        spin(lighten(@primaryColor, 20%), -30) 0,
+        spin(lighten(@primaryColor, 15%), -10) 15%,
+        @primaryColor 50%,
+        spin(lighten(@primaryColor, 15%), 10) 85%,
+        spin(lighten(@primaryColor, 20%), 30) 100%
+);
