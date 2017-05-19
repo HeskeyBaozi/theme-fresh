@@ -30,7 +30,7 @@ module.exports = {
          }*/
         'iview/dist/styles/iview.css',
         {
-            src: '~assets/style/main.less',
+            src: '~assets/style/main.css',
             lang: 'less'
         }
 
@@ -48,7 +48,10 @@ module.exports = {
                 test: /\.ts$/,
                 loader: 'ts-loader'
             });
-        }
+        },
+        postcss: [
+            require('postcss-salad')()
+        ]
     },
     plugins: ['~plugins/fresh-ui', '~plugins/muse-ui', '~plugins/iview-ui']
 };

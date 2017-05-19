@@ -21,20 +21,8 @@
     }
 </script>
 
-<style lang="less">
-    @import "../assets/style/fresh/import.less";
-
+<style>
     .nav-container {
         height: 100%;
-        > .el-tabs__header {
-            margin-bottom: 0;
-            border-bottom: none;
-            height: 100%;
-        }
-
-        .el-tabs__item {
-            height: @top-bar-height;
-            line-height: @top-bar-height;
-        }
     }
 </style>

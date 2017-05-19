@@ -61,11 +61,11 @@
     }
 </script>
 
-<style lang="less">
-    @import "../assets/style/fresh/import.less";
+<style>
+    @import url("../assets/style/fresh/import.css");
 
     .fr-top-bar {
-        .filter-blur(#fff, @general-background, 40px);
+        @mixin filter-blur #fff, var(--background-fixed-image), 80px;
         transition: all .4s ease-in-out;
         position: fixed;
         top: 0;
@@ -101,25 +101,5 @@
 
     .left-icon-rotated {
         transform: rotate(-90deg);
-    }
-
-    .fr-top-bar-1 {
-        .depth(1);
-    }
-
-    .fr-top-bar-2 {
-        .depth(2);
-    }
-
-    .fr-top-bar-3 {
-        .depth(3);
-    }
-
-    .fr-top-bar-4 {
-        .depth(4);
-    }
-
-    .fr-top-bar-5 {
-        .depth(5);
     }
 </style>

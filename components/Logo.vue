@@ -16,11 +16,11 @@
     }
 </script>
 
-<style lang="less" scoped>
-    @import "../assets/style/fresh/import";
+<style>
+    @import "../assets/style/fresh/import.css";
 
     .logo {
         text-align: center;
-        width: @logo-width;
+        width: var(--topbar-logo-width);
     }
 </style>

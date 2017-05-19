@@ -45,12 +45,12 @@
     }
 </script>
 
-<style lang="less">
-    @import "../assets/style/fresh/import";
+<style>
+    @import "../assets/style/fresh/import.css";
     .avatar-info {
-        .filter-blur(#fff, @general-background, 80px);
+        @mixin filter-blur #fff, var(--background-fixed-image), 80px;
 
-        .avatar {
+        & .avatar {
             height: 120px;
             width: 120px;
             margin: 0 auto 15px auto;
@@ -62,6 +62,6 @@
     }
 
     .footer {
-        .filter-blur(#fff, @general-background, 100px);
+        @mixin filter-blur #fff, var(--background-fixed-image), 80px;
     }
 </style>
