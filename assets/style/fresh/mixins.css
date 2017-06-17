@@ -1,0 +1,56 @@
+
+@define-mixin filter-blur $filter-color, $background-fixed-image, $blur-depth {
+    background-color: $filter-color;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    & :before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    filter: blur($blur-depth);
+    background: $background-fixed-image;
+}
+}
+
+.column-flex {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+
+   .card {
+       padding: 1rem 2rem;
+       margin-bottom: 40px;
+   }
+
+   .bright-text {
+       color: #fff;
+       text-shadow: 1px 1px 8px var(--color-primary);
+   }
+
+.dark-text {
+    color: var(--color-primary);
+    text-shadow: 1px 1px 8px #fff;
+}
+
+
+   .leading-card {
+   .column-flex;
+   .card;
+       padding: 0 0 1rem 0;
+& > .leading-title {
+      padding: 0 2rem;
+      text-align: center;
+  .bright-text;
+    @mixin filter-blur #fff, var(--background-fixed-image), 80px;
+  }
+& > .leading-content {
+      padding: 1rem 2rem 0 2rem;
+  }
+}

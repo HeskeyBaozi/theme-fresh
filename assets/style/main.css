@@ -1,0 +1,25 @@
+@import url("./fresh/import.css");
+
+body {
+    padding: 0;
+    margin: 0;
+    background: var(--background-fixed-image);
+    font-family: Microsoft JhengHei, Consolas, sans-serif;
+    font-size: 1rem;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+}
+
+#blog-container {
+    overflow: hidden;
+}
+
+.main-container {
+    width: 800px;
+    margin: var(--main-container-margin-top) auto 0 auto;
+}

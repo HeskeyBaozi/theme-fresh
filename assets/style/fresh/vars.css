@@ -1,0 +1,21 @@
+:root {
+
+    /* Colors
+    -------------------- */
+    --color-primary: #313e51;
+    --color-primary-lighter: rgba(var(--color-primary), 0.12);
+
+    /* Background
+    -------------------- */
+    --background-fixed-image: white url("~assets/img/miku.jpg") 0 / cover fixed;
+    --background-linear-color: linear-gradient(135deg, var(--color-primary) 0, var(--color-primary-lighter) 100%);
+
+    /* Top Bar
+    -------------------- */
+    --topbar-height: 50px;
+    --topbar-logo-width: 160px;
+
+    /* Main Container
+    -------------------- */
+    --main-container-margin-top: calc(var(--topbar-height) * 2);
+}
