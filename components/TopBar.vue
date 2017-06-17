@@ -52,9 +52,11 @@
             switch (type) {
                 case 'UP':
                     this.currentView = 'Navigation';
+                    console.log('Turn up!');
                     break;
                 case 'DOWN':
                     this.currentView = 'Logo';
+                    console.log('Turn down!');
                     break;
             }
         }

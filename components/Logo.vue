@@ -1,6 +1,6 @@
 <template>
     <div class="logo">
-        <span class="dark-text">Heskey Baozi's Blog</span>
+        <span class="dark-text">This is Title</span>
     </div>
 </template>
 
